@@ -1,0 +1,312 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Sombra - Inicio</title>
+    <!-- Fuentes modernas de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2C1A14;
+            --primary-light: #4A3228;
+            --accent: #C8963E;
+            --accent-hover: #b08130;
+            --bg: #FAF7F2;
+            --surface: #FFFFFF;
+            --text-main: #1F1917;
+            --text-muted: #6B5E59;
+            --border: #E8E2D9;
+            --shadow-sm: 0 4px 12px rgba(44, 26, 20, 0.04);
+            --shadow-md: 0 12px 32px rgba(44, 26, 20, 0.08);
+            --radius-lg: 20px;
+            --radius-md: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* --- Encabezado Moderno --- */
+        header {
+            background-color: var(--surface);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .gif-box img {
+            height: 85px;
+            width: 85px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .brand-info {
+            text-align: center;
+        }
+
+        .brand-badge {
+            display: inline-block;
+            background-color: #F4EBD9;
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            margin-bottom: 0.3rem;
+        }
+
+        .brand-info h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-info p {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- Menú de Navegación --- */
+        nav {
+            background-color: var(--primary);
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 0.9rem 1rem;
+        }
+
+        nav a {
+            color: #E6DFD5;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: #FFFFFF;
+            background-color: var(--accent);
+        }
+
+        /* --- Contenedor Principal --- */
+        .container {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* --- Sección Hero --- */
+        .hero-card {
+            background-color: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-md);
+            margin: 1.5rem 0 2rem 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            max-height: 420px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image-wrapper:hover img {
+            transform: scale(1.02);
+        }
+
+        .hero-card p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- Grid de Características --- */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background-color: var(--surface);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- Pie de Página --- */
+        footer {
+            background-color: var(--primary);
+            color: #D8CFC4;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .brand-info h1 {
+                font-size: 1.8rem;
+            }
+            nav {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="gif-box">
+                <!-- RUTA LIBRE DE TU GIF IZQUIERDO -->
+                <img src="gifs/gf1.gif" alt="GIF Izquierda">
+            </div>
+            
+            <div class="brand-info">
+                <span class="brand-badge">Café de Especialidad</span>
+                <h1>Café Sombra</h1>
+                <p>El arte de disfrutar una taza perfecta</p>
+            </div>
+            
+            <div class="gif-box">
+                <!-- RUTA LIBRE DE TU GIF DERECHO -->
+                <img src="gifs/gf2.gif" alt="GIF Derecha">
+            </div>
+        </div>
+        
+        <nav>
+            <a href="index.html" class="active">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="hero-card">
+            <h2>Bienvenido a nuestra cafetería</h2>
+            
+            <div class="hero-image-wrapper">
+                <!-- RUTA LIBRE DE TU IMAGEN PRINCIPAL -->
+                <img src="imagenes/215.jpg" alt="Cafetería Café Sombra">
+            </div>
+            
+            <p>En <strong>Café Sombra</strong> seleccionamos meticulosamente granos de altura para ofrecerte una experiencia inolvidable en cada extracción. Disfruta de una atmósfera cálida y del auténtico sabor artesanal.</p>
+        </section>
+
+        <h2 class="section-title">¿Por qué elegirnos?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🌱</div>
+                <h3>Origen Garantizado</h3>
+                <p>Granos 100% mexicanos seleccionados de las mejores fincas de Chiapas y Oaxaca.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔥</div>
+                <h3>Tostado Artesanal</h3>
+                <p>Tostamos cada lote semanalmente para conservar los aromas y matices naturales.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">☕</div>
+                <h3>Espacio Inigualable</h3>
+                <p>Ambiente acogedor diseñado para inspirarte, trabajar o disfrutar con amigos.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Café Sombra. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Sombra - Nosotros</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2C1A14;
+            --accent: #C8963E;
+            --bg: #FAF7F2;
+            --surface: #FFFFFF;
+            --text-main: #1F1917;
+            --text-muted: #6B5E59;
+            --border: #E8E2D9;
+            --shadow-sm: 0 4px 12px rgba(44, 26, 20, 0.04);
+            --shadow-md: 0 12px 32px rgba(44, 26, 20, 0.08);
+            --radius-lg: 20px;
+            --radius-md: 12px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg); color: var(--text-main); line-height: 1.6; }
+
+        header { background-color: var(--surface); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 1000; }
+        .header-top { max-width: 1100px; margin: 0 auto; padding: 1.2rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+        .gif-box img { height: 85px; width: 85px; object-fit: cover; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+        .brand-info { text-align: center; }
+        .brand-badge { display: inline-block; background-color: #F4EBD9; color: var(--accent); font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 50px; margin-bottom: 0.3rem; }
+        .brand-info h1 { font-family: 'Playfair Display', serif; font-size: 2.4rem; color: var(--primary); font-weight: 700; }
+        .brand-info p { font-family: 'Playfair Display', serif; font-style: italic; color: var(--text-muted); font-size: 0.95rem; }
+
+        nav { background-color: var(--primary); display: flex; justify-content: center; gap: 1.5rem; padding: 0.9rem 1rem; }
+        nav a { color: #E6DFD5; text-decoration: none; font-weight: 600; font-size: 0.95rem; padding: 0.4rem 1rem; border-radius: 50px; transition: all 0.3s ease; }
+        nav a:hover, nav a.active { color: #FFFFFF; background-color: var(--accent); }
+
+        .container { max-width: 1100px; margin: 3rem auto; padding: 0 1.5rem; }
+
+        .card-panel {
+            background-color: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+            margin-bottom: 3rem;
+        }
+
+        .card-panel h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-md);
+            margin: 1.5rem 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .about-image-wrapper img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .mv-box {
+            background-color: #FAF8F5;
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--accent);
+        }
+
+        .mv-box h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .values-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .values-list li {
+            background-color: #FAF8F5;
+            padding: 1rem 1.2rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+
+        .values-list li strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        footer { background-color: var(--primary); color: #D8CFC4; text-align: center; padding: 2rem 1.5rem; margin-top: 4rem; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .mv-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="gif-box">
+                <!-- RUTA LIBRE DE TU GIF IZQUIERDO -->
+                <img src="gifs/gf1.gif" alt="GIF Izquierda">
+            </div>
+            
+            <div class="brand-info">
+                <span class="brand-badge">Café de Especialidad</span>
+                <h1>Café Sombra</h1>
+                <p>El arte de disfrutar una taza perfecta</p>
+            </div>
+            
+            <div class="gif-box">
+                <!-- RUTA LIBRE DE TU GIF DERECHO -->
+                <img src="gifs/gf2.gif" alt="GIF Derecha">
+            </div>
+        </div>
+        
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="nosotros.html" class="active">Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="card-panel">
+            <h2>Nuestra Historia</h2>
+            <p>Fundada en 2022, <strong>Café Sombra</strong> nació del profundo amor por el café de altura y de la visión de crear un puente directo entre productores locales mexicanos y los verdaderos amantes del café de especialidad.</p>
+
+            <div class="about-image-wrapper">
+                <!-- RUTA LIBRE DE TU IMAGEN NOSOTROS -->
+                <img src="imagenes/no.jpg" alt="Interior de Café Sombra">
+            </div>
+            
+            <p>Lo que comenzó como una pequeña barra artesanal de café, hoy se consolida como un punto de encuentro para la comunidad en Toluca, destacándonos por la calidez en nuestro servicio y el rigor en cada taza.</p>
+        </section>
+
+        <section class="card-panel">
+            <h2>Propósito y Principios</h2>
+
+            <div class="mv-grid">
+                <div class="mv-box">
+                    <h3>Misión</h3>
+                    <p>Servir café de especialidad excepcional bajo estándares de comercio justo, impulsando el trabajo de cafeticultores locales y brindando una atmósfera inspiradora.</p>
+                </div>
+
+                <div class="mv-box">
+                    <h3>Visión</h3>
+                    <p>Convertirnos en la cafetería de especialidad referente en la región, reconocida por nuestra calidad técnica, compromiso ambiental y calidez humana.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2.5rem; font-family: 'Playfair Display', serif; color: var(--primary); font-size: 1.5rem;">Valores Fundamentales</h3>
+            <ul class="values-list">
+                <li>
+                    <strong>☕ Calidad Absoluta</strong>
+                    Cuidado minucioso desde la finca hasta la extracción.
+                </li>
+                <li>
+                    <strong>🌿 Sustentabilidad</strong>
+                    Uso de empaques biodegradables y proceso residuo cero.
+                </li>
+                <li>
+                    <strong>🤝 Comercio Justo</strong>
+                    Relación transparente y equitativa con productores.
+                </li>
+                <li>
+                    <strong>💛 Comunidad</strong>
+                    Un ambiente inclusivo y seguro abierto a todos.
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Café Sombra. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
