@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Café Sombra - Productos</title>
+    <title>Café Sombra - Productos y Pedidos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -10,6 +10,7 @@
         :root {
             --primary: #2C1A14;
             --accent: #C8963E;
+            --accent-hover: #b08130;
             --bg: #FAF7F2;
             --surface: #FFFFFF;
             --text-main: #1F1917;
@@ -139,7 +140,72 @@
             margin-bottom: 0.3rem;
         }
 
+        /* --- Formulario de Pedido --- */
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.3rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.4rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 0.95rem;
+            background-color: #FAF8F5;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background-color: #FFFFFF;
+            box-shadow: 0 0 0 4px rgba(200, 150, 62, 0.15);
+        }
+
+        .btn-submit {
+            background-color: var(--primary);
+            color: #FFFFFF;
+            border: none;
+            padding: 1rem 1.8rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-submit:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
         footer { background-color: var(--primary); color: #D8CFC4; text-align: center; padding: 2rem 1.5rem; margin-top: 4rem; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .form-row { grid-template-columns: 1fr; gap: 0; }
+        }
     </style>
 </head>
 <body>
@@ -148,7 +214,7 @@
         <div class="header-top">
             <div class="gif-box">
                 <!-- RUTA LIBRE DE TU GIF IZQUIERDO -->
-                <img src="gifs/gf1.gif" alt="GIF Izquierda">
+                <img src="gifs/gato_izquierda.gif" alt="GIF Izquierda">
             </div>
             
             <div class="brand-info">
@@ -159,7 +225,7 @@
             
             <div class="gif-box">
                 <!-- RUTA LIBRE DE TU GIF DERECHO -->
-                <img src="gifs/gf2.gif" alt="GIF Derecha">
+                <img src="gifs/gato_derecha.gif" alt="GIF Derecha">
             </div>
         </div>
         
@@ -172,6 +238,7 @@
     </header>
 
     <div class="container">
+        <!-- 1. Catálogo de productos -->
         <section class="card-panel">
             <h2>Nuestra Carta de Especialidades</h2>
             <p class="subtitle">Selección artesanal de bebidas de especialidad y postres recién horneados.</p>
@@ -188,25 +255,25 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><img src="imagenes/es.jpg" alt="Espresso Doble" class="product-img"></td>
+                            <td><img src="imagenes/espresso.jpg" alt="Espresso Doble" class="product-img"></td>
                             <td><span class="product-name">Espresso Doble</span></td>
                             <td>Extracción intensa con notas a chocolate amargo y frutos secos.</td>
                             <td><span class="price-tag">$45.00 MXN</span></td>
                         </tr>
                         <tr>
-                            <td><img src="imagenes/cap.jpeg" alt="Cappuccino" class="product-img"></td>
+                            <td><img src="imagenes/cappuccino.jpg" alt="Cappuccino" class="product-img"></td>
                             <td><span class="product-name">Cappuccino Artesanal</span></td>
                             <td>Espresso equilibrado con leche cremosa vaporizada y fina espuma.</td>
                             <td><span class="price-tag">$60.00 MXN</span></td>
                         </tr>
                         <tr>
-                            <td><img src="imagenes/latt.jpg" alt="Latte Vainilla" class="product-img"></td>
+                            <td><img src="imagenes/latte.jpg" alt="Latte Vainilla" class="product-img"></td>
                             <td><span class="product-name">Latte Vainilla Orgánica</span></td>
                             <td>Café de altura con leche suave e infusión de vainilla natural.</td>
                             <td><span class="price-tag">$65.00 MXN</span></td>
                         </tr>
                         <tr>
-                            <td><img src="imagenes/pay.jpeg" alt="Pay de Limón" class="product-img"></td>
+                            <td><img src="imagenes/pay_limon.jpg" alt="Pay de Limón" class="product-img"></td>
                             <td><span class="product-name">Pay de Limón Casero</span></td>
                             <td>Postre artesanal con base crujiente y crema fresca de limón.</td>
                             <td><span class="price-tag">$50.00 MXN</span></td>
@@ -216,6 +283,69 @@
             </div>
         </section>
 
+        <!-- 2. Formulario de Pedido -->
+        <section class="card-panel">
+            <h2>🛒 Realizar un Pedido</h2>
+            <p class="subtitle">Elige tus productos y recíbelos a domicilio o pasa por ellos a la sucursal.</p>
+
+            <form action="mailto:fer135ortiz44@gmail.com" method="POST" enctype="text/plain">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre y apellido" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono de contacto:</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="7222818491" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="producto">Selecciona tu producto:</label>
+                        <select id="producto" name="producto" required>
+                            <option value="">-- Elige una opción --</option>
+                            <option value="Espresso Doble ($45 MXN)">Espresso Doble — $45.00 MXN</option>
+                            <option value="Cappuccino Artesanal ($60 MXN)">Cappuccino Artesanal — $60.00 MXN</option>
+                            <option value="Latte Vainilla Orgánica ($65 MXN)">Latte Vainilla Orgánica — $65.00 MXN</option>
+                            <option value="Pay de Limón Casero ($50 MXN)">Pay de Limón Casero — $50.00 MXN</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cantidad">Cantidad:</label>
+                        <input type="number" id="cantidad" name="cantidad" min="1" max="20" value="1" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="metodo">Método de extracción (opcional):</label>
+                        <select id="metodo" name="metodo">
+                            <option value="Tradicional / N/A">Espresso Tradicional / N/A</option>
+                            <option value="Prensa Francesa">Prensa Francesa</option>
+                            <option value="V60 (Goteo)">V60 (Goteo)</option>
+                            <option value="Chemex">Chemex</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="servicio">Modo de entrega:</label>
+                        <select id="servicio" name="servicio" required>
+                            <option value="Para recoger en sucursal">Para recoger en sucursal</option>
+                            <option value="Entrega a domicilio">Entrega a domicilio</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="especificaciones">Especificaciones o notas adicionales:</label>
+                    <textarea id="especificaciones" name="especificaciones" rows="3" placeholder="Ej. Tipo de leche (almendra/entera), sin azúcar, dirección de entrega..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Enviar Pedido por Correo</button>
+            </form>
+        </section>
+
+        <!-- 3. Métodos de extracción -->
         <section class="card-panel">
             <h2>Métodos de Extracción en Barra</h2>
             <p class="subtitle">Elige cómo deseas extraer los sabores y matices de nuestros granos:</p>
